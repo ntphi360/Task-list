@@ -1,7 +1,14 @@
 <?php
 
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
+use App\Models\Task;
+use App\Http\Controllers\TaskController;
+
+
 
 Route::get('/', function () {
-    return view('welcome');
+    redirect()->route('tasks.index');
 });
+
+Route::resource('tasks', TaskController::class); 
